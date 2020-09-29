@@ -47,6 +47,7 @@ t_num		num_sqr(t_num a);
 t_num		num_min(t_num a, t_num b);
 t_num		num_max(t_num a, t_num b);
 t_num		num_clamp(t_num val, t_num min, t_num max);
+t_num		num_map(t_num x, t_vec2 in, t_vec2 out);
 
 /* ************************************************************************** */
 /*                                 vec2                                       */
