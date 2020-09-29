@@ -35,7 +35,7 @@ t_num		num_clamp(t_num val, t_num min, t_num max)
 	return (val);
 }
 
-t_num		ft_map(t_num x, t_vec2 in, t_vec2 out)
+t_num		num_map(t_num x, t_vec2 in, t_vec2 out)
 {
     return ((x - in.x) * (out.y - out.x) / (in.y - in.x) + out.x);
 }
