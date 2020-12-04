@@ -1,49 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libnum_types.h                                     :+:      :+:    :+:   */
+/*   libnum_qtn.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvoor <jvoor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/18 03:06:49 by kcharla           #+#    #+#             */
-/*   Updated: 2020/12/03 18:50:04 by jvoor            ###   ########.fr       */
+/*   Created: 2020/12/03 17:52:39 by jvoor             #+#    #+#             */
+/*   Updated: 2020/12/04 12:14:12 by jvoor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBNUM_TYPES_H
-# define LIBNUM_TYPES_H
+#ifndef LIBNUM_QTN
+# define LIBNUM_QTN
+# include "libnum_types.h"
 
-# include <math.h>
 
-typedef float		t_num;
+/*
+**      qtn__1.c
+*/
 
-typedef struct		s_vec2
-{
-	t_num			x;
-	t_num			y;
-}					t_vec2;
+t_qtn			qtn_normalize(t_qtn q);
+t_qtn			matrix_to_qtn(t_mat3x3 m);
+t_mat3x3		qtn_to_matrix(t_qtn q);
 
-typedef struct		s_vec3
-{
-	t_num			x;
-	t_num			y;
-	t_num			z;
-}					t_vec3;
+/*
+**      qtn__2.c
+*/
 
-typedef struct		s_mat3x3
-{
-	t_vec3			x;
-	t_vec3			y;
-	t_vec3			z;
-}					t_mat3x3;
-
-typedef struct		s_qtn
-{
-	t_num			w;
-	t_num			x;
-	t_num			y;
-	t_num			z;	
-}					t_qtn;
-
+t_qtn           qtn_mult_qtn(t_qtn q1, t_qtn q2);
+t_vec3          vec3_transform_qtn(t_vec3 v, t_qtn q);
 
 #endif

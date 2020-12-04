@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libnum.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kcharla <kcharla@student.21-school.ru>     +#+  +:+       +#+        */
+/*   By: jvoor <jvoor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/18 03:06:49 by kcharla           #+#    #+#             */
-/*   Updated: 2020/07/19 15:56:50 by kcharla          ###   ########.fr       */
+/*   Updated: 2020/12/03 19:13:25 by jvoor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "libnum_types.h"
 # include "libnum_vec2.h"
 # include "libnum_vec3.h"
+# include "libnum_qtn.h"
 # include "libnum_mat3x3.h"
 
 /*
