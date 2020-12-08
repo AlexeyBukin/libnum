@@ -15,13 +15,12 @@ SRC_DIR = src/
 # find src -type f -name '*.c' | sed 'N;N;s/\n/ /g' | sed "s/\$/ \\\\/" | column -t
 
 SRC_FILES = \
-src/convert/vec2to3.c   src/convert/vec3to2.c   src/mat3x3/mat3x3__1.c  \
-src/mat3x3/mat3x3__2.c  src/mat3x3/mat3x3__3.c  src/num/num__1.c        \
-src/num/num__2.c        src/qtn/qtn__1.c        src/qtn/qtn__2.c        \
-src/vec2/vec2__1.c      src/vec2/vec2__2.c      src/vec2/vec2__3.c      \
-src/vec2/vec2__4.c      src/vec2/vec2__5.c      src/vec2/vec2__6.c      \
-src/vec2/vec2__7.c      src/vec3/vec3__1.c      src/vec3/vec3__2.c      \
-src/vec3/vec3__3.c      src/vec3/vec3__4.c      src/vec3/vec3__5.c
+src/convert/vec2to3.c   src/num/num__2.c        src/vec2/vec2__4.c      src/vec3/vec3__3.c \
+src/convert/vec3to2.c   src/qtn/qtn__1.c        src/vec2/vec2__5.c      src/vec3/vec3__4.c \
+src/mat3x3/mat3x3__1.c  src/qtn/qtn__2.c        src/vec2/vec2__6.c      src/vec3/vec3__5.c \
+src/mat3x3/mat3x3__2.c  src/vec2/vec2__1.c      src/vec2/vec2__7.c      src/vec3/vec3__6.c \
+src/mat3x3/mat3x3__3.c  src/vec2/vec2__2.c      src/vec3/vec3__1.c      src/vec3/vec3__7.c \
+src/num/num__1.c        src/vec2/vec2__3.c      src/vec3/vec3__2.c
 
 O_FILES = $(patsubst $(SRC_DIR)%.c, $(BUILD_DIR)%.o, $(SRC_FILES))
 
