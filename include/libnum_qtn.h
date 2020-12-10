@@ -28,6 +28,7 @@ t_mat3x3		qtn_to_matrix(t_qtn q);
 */
 
 t_qtn           qtn_mult_qtn(t_qtn q1, t_qtn q2);
-t_vec3          vec3_transform_qtn(t_vec3 v, t_qtn q);
+t_qtn			qtn_reverse(t_qtn q);
+t_vec3			vec3_rotate_qtn(t_vec3 v, t_qtn q);
 
 #endif

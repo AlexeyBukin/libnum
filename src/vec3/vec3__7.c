@@ -36,3 +36,11 @@ t_vec3			vec3_min_num(t_vec3 v, t_num n)
 {
 	return (vec3_min(v, vec3(n, n, n)));
 }
+
+t_vec3			vec3_round_bounds(t_vec3 vec, t_num min, t_num max, t_num round)
+{
+	vec.x = num_round_bounds(vec.x, min, max, round);
+	vec.y = num_round_bounds(vec.y, min, max, round);
+	vec.z = num_round_bounds(vec.z, min, max, round);
+	return (vec);
+}

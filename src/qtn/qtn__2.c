@@ -14,27 +14,37 @@
 
 t_qtn			qtn_mult_qtn(t_qtn q1, t_qtn q2)
 {
-    t_qtn		res;
+	t_qtn		res;
 
-	res.w = (q1.w * q2.w) - (q1.x * q2.x) - (q1.y * q2.y) - (q1.z * q2.z);
 	res.x = (q1.w * q2.x) + (q1.x * q2.w) + (q1.y * q2.z) - (q1.z * q2.y);
 	res.y = (q1.w * q2.y) - (q1.x * q2.z) + (q1.y * q2.w) + (q1.z * q2.x);
 	res.z = (q1.w * q2.z) + (q1.x * q2.y) - (q1.y * q2.x) + (q1.z * q2.w);
-	return (res);
+	res.w = (q1.w * q2.w) - (q1.x * q2.x) - (q1.y * q2.y) - (q1.z * q2.z);
+	return ((res));
 }
 
-t_vec3			vec3_transform_qtn(t_vec3 v, t_qtn q)
+t_qtn			qtn_reverse(t_qtn q)
 {
-	t_vec3      res;// TODO: chance typo is super high, must be tested strictly
+	t_qtn		qr;
 
-	res.x = (pow(q.w, 2) * v.x) + (2 * q.y * q.w * v.z) - (2 * q.z * q.w * v.y) +
-		(pow(q.x, 2) * v.x) + (2 * q.y * q.x * v.y) + (2 * q.z * q.x * v.z) -
-		(pow(q.z, 2) * v.x) - (pow(q.y, 2) * v.x);
-	res.y = (2 * q.x * q.y * v.x) + (pow(q.y, 2) * v.y) + (2 * q.z * q.y * v.z) +
-		(2 * q.w * q.z * v.x) - (pow(q.z, 2) * v.y) + (pow(q.w, 2) * v.y) -
-		(2 * q.x * q.w * v.z) - (pow(q.x, 2) * v.y);
-	res.z = (2 * q.x * q.z * v.x) + (2 * q.y * q.z * v.y) + (pow(q.z, 2) * v.z) -
-		(2 * q.w * q.y * v.x) - (pow(q.y, 2) * v.z) + (2 * q.w * q.x * v.y) -
-		(pow(q.x, 2) * v.z) + (pow(q.w, 2) * v.z);
+	qr.x = -q.x;
+	qr.y = -q.y;
+	qr.z = -q.z;
+	qr.w = q.w;
+	return (qr);
+}
+
+t_vec3			vec3_rotate_qtn(t_vec3 v, t_qtn q)
+{
+	t_qtn		vq;
+	t_qtn		qr;
+	t_qtn		resq;
+	t_vec3		res;
+
+	vq = vec3_to_qtn(v);
+	resq = qtn_mult_qtn(q, vq);
+	qr = qtn_reverse(q);
+	resq = qtn_mult_qtn(resq, qr);
+	res = qtn_to_vec3(resq);
 	return (res);
 }

@@ -39,5 +39,6 @@ t_mat3x3		mat3x3_num_div(t_mat3x3 mat, t_num num);
 
 t_mat3x3		mat3x3_zero();
 t_mat3x3		mat3x3_identity();
+t_mat3x3 		mat3x3_normalize(t_mat3x3 mat);
 
 #endif

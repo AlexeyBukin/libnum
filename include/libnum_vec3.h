@@ -80,5 +80,6 @@ int					vec3_point_is_behind(t_vec3 vec3_from_zero, t_vec3 point);
 t_vec3				vec3_clamp(t_vec3 source, t_num min, t_num max);
 t_vec3				vec3_max_num(t_vec3 v, t_num n);
 t_vec3				vec3_max_min(t_vec3 v, t_num n);
+t_vec3				vec3_round_bounds(t_vec3 vec, t_num min, t_num max, t_num round);
 
 #endif

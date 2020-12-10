@@ -22,6 +22,10 @@ t_qtn			qtn_normalize(t_qtn q)
 	qn.x = q.x / norm;
 	qn.y = q.y / norm;
 	qn.z = q.z / norm;
+	qn.w = (-(NUM_EPS) < qn.w && qn.w < NUM_EPS) ? 0 : qn.w;
+	qn.x = (-(NUM_EPS) < qn.x && qn.x < NUM_EPS) ? 0 : qn.x;
+	qn.y = (-(NUM_EPS) < qn.y && qn.y < NUM_EPS) ? 0 : qn.y;
+	qn.z = (-(NUM_EPS) < qn.z && qn.z < NUM_EPS) ? 0 : qn.z;
 	return (qn);
 }
 
@@ -29,7 +33,7 @@ static t_qtn	matrix_to_qtn1(t_mat3x3 m)
 {
 	t_qtn		q;
 	t_num		s;
-	
+
 	if (m.y.y > m.z.z)
 	{
 		s = sqrt(1.0 + m.y.y - m.x.x - m.z.z) * 2;
@@ -46,7 +50,7 @@ static t_qtn	matrix_to_qtn1(t_mat3x3 m)
 		q.y = (m.y.z + m.z.y) / s;
 		q.z = 0.25 * s;
 	}
-	return (qtn_normalize(q));
+	return ((q));
 }
 
 t_qtn			matrix_to_qtn(t_mat3x3 m)
@@ -54,7 +58,7 @@ t_qtn			matrix_to_qtn(t_mat3x3 m)
 	t_qtn		q;
 	t_num		tr;
 	t_num		s;
-	
+
 	tr = m.x.x + m.y.y + m.z.z;
 	if (tr > 0)
 	{
@@ -74,21 +78,23 @@ t_qtn			matrix_to_qtn(t_mat3x3 m)
 	}
 	else
 		return (matrix_to_qtn1(m));
-	return (qtn_normalize(q));
+	return ((q));
 }
 
-t_mat3x3		qtn_to_matrix(t_qtn q)
+t_mat3x3		qtn_to_matrix(t_qtn qn)
 {
 	t_mat3x3	mat;
-	
-	mat.x.x = 1 - (2 * pow(q.y, 2)) - (2 * pow(q.z, 2));
-	mat.x.y = (2 * q.x * q.y) + (2 * q.z * q.w);
-	mat.x.z = (2 * q.x * q.z) - (2 * q.y * q.w);
-	mat.y.x = (2 * q.x * q.y) - (2 * q.z * q.w);
-	mat.y.y = 1 - (2 * pow(q.x, 2)) - (2 * pow(q.z, 2));
-	mat.y.z = (2 * q.y * q.z) + (2 * q.x * q.w);
-	mat.z.x = (2 * q.x * q.z) + (2 * q.y * q.w);
-	mat.z.y = (2 * q.y * q.z) - (2 * q.x * q.w);
-	mat.z.z = 1 - (2 * pow(q.x, 2)) - (2 * pow(q.y, 2));
+	t_qtn		q;
+
+	q = qn;
+	mat.x.x = 1 - (2 * q.y * q.y) - (2 * q.z * q.z);
+	mat.x.y = (2 * q.x * q.y) - (2 * q.z * q.w);
+	mat.x.z = (2 * q.x * q.z) + (2 * q.y * q.w);
+	mat.y.x = (2 * q.x * q.y) + (2 * q.z * q.w);
+	mat.y.y = 1 - (2 * q.x * q.x) - (2 * q.z * q.z);
+	mat.y.z = (2 * q.y * q.z) - (2 * q.x * q.w);
+	mat.z.x = (2 * q.x * q.z) - (2 * q.y * q.w);
+	mat.z.y = (2 * q.y * q.z) + (2 * q.x * q.w);
+	mat.z.z = 1 - (2 * q.x * q.x) - (2 * q.y * q.y);
 	return (mat);
 }
