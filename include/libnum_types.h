@@ -15,7 +15,8 @@
 
 # include <math.h>
 
-typedef double		t_num;
+typedef float		t_num;
+
 //TODO: define different epsilon fo double and float
 
 # define NUM_EPS 0.0000001
