@@ -17,8 +17,6 @@
 
 typedef float		t_num;
 
-//TODO: define different epsilon fo double and float
-
 # define NUM_EPS 0.0000001
 
 typedef struct		s_vec2
@@ -48,6 +46,5 @@ typedef struct		s_qtn
 	t_num			z;
 	t_num			w;
 }					t_qtn;
-
 
 #endif

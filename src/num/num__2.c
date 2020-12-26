@@ -44,5 +44,5 @@ t_num		num_round_bounds(t_num num, t_num min, t_num max, t_num round)
 
 t_num		num_map(t_num x, t_vec2 in, t_vec2 out)
 {
-    return ((x - in.x) * (out.y - out.x) / (in.y - in.x) + out.x);
+	return ((x - in.x) * (out.y - out.x) / (in.y - in.x) + out.x);
 }

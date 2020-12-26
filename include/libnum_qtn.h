@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBNUM_QTN
-# define LIBNUM_QTN
-# include "libnum_types.h"
+#ifndef LIBNUM_QTN_H
+# define LIBNUM_QTN_H
 
+# include "libnum_types.h"
 
 /*
 **      qtn__1.c
@@ -27,7 +27,7 @@ t_mat3x3		qtn_to_matrix(t_qtn q);
 **      qtn__2.c
 */
 
-t_qtn           qtn_mult_qtn(t_qtn q1, t_qtn q2);
+t_qtn			qtn_mult_qtn(t_qtn q1, t_qtn q2);
 t_qtn			qtn_reverse(t_qtn q);
 t_vec3			vec3_rotate_qtn(t_vec3 v, t_qtn q);
 

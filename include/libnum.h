@@ -40,19 +40,20 @@ t_num		num_clamp(t_num val, t_num min, t_num max);
 t_num		num_round_bounds(t_num num, t_num min, t_num max, t_num round);
 t_num		num_map(t_num x, t_vec2 in, t_vec2 out);
 
-/* ************************************************************************** */
-/*                                convert                                     */
-/* ************************************************************************** */
+/*
+***************************************************************************** *
+**                                convert                                     *
+***************************************************************************** *
+*/
+t_vec3		vec2to3_xy0(t_vec2 v2);
+t_vec3		vec2to3_xxy(t_vec2 v2);
+t_vec3		vec2to3_xyy(t_vec2 v2);
 
-t_vec3				vec2to3_xy0(t_vec2 v2);
-t_vec3				vec2to3_xxy(t_vec2 v2);
-t_vec3				vec2to3_xyy(t_vec2 v2);
+t_vec2		vec3to2_xy(t_vec3 v3);
+t_vec2		vec3to2_yz(t_vec3 v3);
+t_vec2		vec3to2_xz(t_vec3 v3);
 
-t_vec2				vec3to2_xy(t_vec3 v3);
-t_vec2				vec3to2_yz(t_vec3 v3);
-t_vec2				vec3to2_xz(t_vec3 v3);
-
-t_qtn				vec3_to_qtn(t_vec3 v);
-t_vec3				qtn_to_vec3(t_qtn q);
+t_qtn		vec3_to_qtn(t_vec3 v);
+t_vec3		qtn_to_vec3(t_qtn q);
 
 #endif

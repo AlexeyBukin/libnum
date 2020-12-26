@@ -71,7 +71,8 @@ t_vec2				vec2_min(t_vec2 a, t_vec2 b);
 ** vec2__6.c
 */
 
-t_vec2				vec2_do_vec2(t_vec2 v1, t_vec2 v2, t_num f(t_num n1, t_num n2));
+t_vec2				vec2_do_vec2(t_vec2 v1, t_vec2 v2, t_num f(t_num n1,
+													t_num n2));
 t_vec2				vec2_do_num(t_vec2 v, t_num n, t_num f(t_num n1, t_num n2));
 t_vec2				vec2_swap(t_vec2 v);
 

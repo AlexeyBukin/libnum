@@ -20,9 +20,12 @@
 */
 
 t_mat3x3		mat3x3(t_vec3 x, t_vec3 y, t_vec3 z);
-t_mat3x3		mat3x3_do_num(t_mat3x3 mat, t_num num, t_num f(t_num n1, t_num n2));
-t_mat3x3		mat3x3_do_vec3(t_mat3x3 mat, t_vec3 vec, t_num f(t_num n1, t_num n2));
-t_mat3x3		mat3x3_do_mat3x3(t_mat3x3 m1,t_mat3x3 m2, t_num f(t_num n1, t_num n2));
+t_mat3x3		mat3x3_do_num(t_mat3x3 mat, t_num num,
+						t_num f(t_num n1, t_num n2));
+t_mat3x3		mat3x3_do_vec3(t_mat3x3 mat, t_vec3 vec,
+						t_num f(t_num n1, t_num n2));
+t_mat3x3		mat3x3_do_mat3x3(t_mat3x3 m1, t_mat3x3 m2,
+						t_num f(t_num n1, t_num n2));
 
 /*
 ** mat3x3__2.c
@@ -39,6 +42,6 @@ t_mat3x3		mat3x3_num_div(t_mat3x3 mat, t_num num);
 
 t_mat3x3		mat3x3_zero();
 t_mat3x3		mat3x3_identity();
-t_mat3x3 		mat3x3_normalize(t_mat3x3 mat);
+t_mat3x3		mat3x3_normalize(t_mat3x3 mat);
 
 #endif

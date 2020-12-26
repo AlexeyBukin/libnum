@@ -69,7 +69,8 @@ t_vec3				vec3_min(t_vec3 a, t_vec3 b);
 ** vec3__6.c
 */
 
-t_vec3				vec3_do_vec3(t_vec3 v1, t_vec3 v2, t_num f(t_num n1, t_num n2));
+t_vec3				vec3_do_vec3(t_vec3 v1, t_vec3 v2, t_num f(t_num n1,
+													t_num n2));
 t_vec3				vec3_do_num(t_vec3 v, t_num n, t_num f(t_num n1, t_num n2));
 
 /*
@@ -80,6 +81,7 @@ int					vec3_point_is_behind(t_vec3 vec3_from_zero, t_vec3 point);
 t_vec3				vec3_clamp(t_vec3 source, t_num min, t_num max);
 t_vec3				vec3_max_num(t_vec3 v, t_num n);
 t_vec3				vec3_max_min(t_vec3 v, t_num n);
-t_vec3				vec3_round_bounds(t_vec3 vec, t_num min, t_num max, t_num round);
+t_vec3				vec3_round_bounds(t_vec3 vec, t_num min, t_num max,
+													t_num round);
 
 #endif

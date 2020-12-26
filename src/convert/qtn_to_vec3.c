@@ -12,9 +12,9 @@
 
 #include "libnum.h"
 
-t_vec3			qtn_to_vec3(t_qtn q)
+t_vec3		qtn_to_vec3(t_qtn q)
 {
-	t_vec3 		v;
+	t_vec3	v;
 
 	v.x = q.x;
 	v.y = q.y;
